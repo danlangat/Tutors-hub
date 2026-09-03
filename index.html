@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduProGlobal | Premium Tutoring Opportunities</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
+<body>
+
+    <!-- SECTION 1: THE HOOK (HOME_PAGE) -->
+    <header id="home-page">
+        <nav>
+            <div class="logo">EduProGlobal</div>
+            <button onclick="showPage('register-page')" class="btn-nav">Apply Now</button>
+        </nav>
+        <section class="hero">
+            <h1>Join our Elite Global Teaching Faculty</h1>
+            <p>Earn professional-grade wages working from any location.</p>
+            <div class="salary-cards">
+                <div class="card">
+                    <h3>Science-Based Tutors</h3>
+                    <p class="price">$30 / hour</p>
+                </div>
+                <div class="card highlight">
+                    <h3>Arts-Based Tutors</h3>
+                    <p class="price">$45 / hour</p>
+                </div>
+            </div>
+            <button class="btn-large" onclick="showPage('register-page')">View Open Positions</button>
+        </section>
+    </header>
+
+    <!-- SECTION 2: REGISTRATION/LOGIN -->
+    <main id="register-page" class="hidden">
+        <div class="form-container">
+            <h2>Register as a Professional</h2>
+            <p>Choose your path to join our platform.</p>
+            <div class="role-toggle">
+                <button onclick="setRole('tutor')" id="btn-tutor" class="active">Tutor</button>
+                <button onclick="setRole('learner')" idor="btn-learner">Learner</button>
+            </div>
+
+            <form id="registration-form">
+                <input type="hidden" id="user-role" value="tutor">
+
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+
+                <!-- Tutor Specific Fields -->
+                <div id="tutor-fields">
+                    <input type="text" placeholder="Field of Specialty (e.g. Biology, Fine Arts)">
+                    <input type="number" placeholder="Years of Experience">
+                    <label for="cv-upload">Upload CV (PDF/Doc)</label>
+                    <input type="file" id="cv-upload" accept=".pdf,.doc,.docx" required>
+
+                    <div class="payment-alert">
+                        <p><strong>Registration Fee: $50.0</strong></p>
+                        <p><small>Paid instantly upon application submission.</small></p>
+                    </div>
+                </div>
+                
+                <div id="paypal-button-container"></div>v
+
+                <button type="submit" class="btn-submit">Complete Application & Pay $50</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- SECTION 3: SUCCESS/PAYMENT CONFIRMATION -->
+    <div id="success-page" class="hidden">
+        <div class="success-card">
+            <h1>Application Successful!</h1>
+            <p>Your $50 payment has been processed. Your credentials and CV are being reviewed by our vetting team.</p>
+            <button onclick="location.reload()">Back to Home</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
